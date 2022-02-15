@@ -1,0 +1,48 @@
+= Practical Testing with Spring Boot
+:author: TBD
+:email: TBD
+:revnumber: v0.1
+:revdate: 2021-11-17
+:doctype: book
+:chapter-label: Chapter
+:sectnums:
+:toc: left
+:toclevels: 2
+:toc-title: Table of Contents
+// :notitle:
+// :front-cover-image: image::images/cover.jpg[]
+:description: This is the description of your book
+:source-highlighter: rouge
+:source-language: java
+:mode: dev
+
+ifdef::backend-html5[]
+++++
+<style>
+pre.rouge .hll {
+  background-color: #ffc;
+}
+pre.rouge .hll * {
+  background-color: initial;
+}
+</style>
+++++
+
+ifeval::["{mode}" == "dev"]
+++++
+<!-- for writing -->
+<pre>-live reload (DEV) mode-</pre>
+<script type="text/javascript" src="live.js#html"></script>
+<br />
+<br />
+
+++++
+endif::[]
+
+endif::[]
+
+
+
+include::chapter-01.adoc[]
+
+include::chapter-02.adoc[]

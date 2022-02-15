@@ -1,0 +1,18 @@
+== The Building Blocks
+
+Before we can start writing tests, we should get familiar with the tools in our toolbox. Luckiliy, Spring Boot is packed with some great tesing infrastructure right out of the box. Whether you have an existing Spring Boot project you would like to work with, or you are starting a new project using link:https://start.spring.io/[Spring Initializr] just for learning - you already have all you need!
+
+The tools we will use are:
+
+* Junit
+* Mockito
+* Maven
+
+=== Junit
+Junit is the de-facto standard
+
+=== Mockito
+TBD
+
+=== Maven
+TBD

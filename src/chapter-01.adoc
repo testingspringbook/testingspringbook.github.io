@@ -1,0 +1,33 @@
+== Introduction
+
+This text is still work in progress...
+
+=== Who is this text for?
+The target audience of this text are software engineers who is currnetly working with Spring Boot and are new to the world of automated tesing. Therefore, I assume you have some experience with Java (version 8 and above) and Spring Boot. Let's get started...
+
+=== Who am I ?
+Testing testing!
+
+=== Why automated testing?
+TBD
+
+=== Structure of this text
+TBD 
+
+
+[source%linenums, java] <.>
+----
+System.out.println("Hey")! <.>
+----
+
+<.> aa
+
+.Some Ruby code
+[source%linenums,ruby,highlight=2..5]
+----
+require 'sinatra'
+
+get '/hi' do
+  "Hello World!"
+end
+----
