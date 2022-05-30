@@ -5,14 +5,88 @@ Before we can start writing tests, we should get familiar with the tools in our 
 The tools we will use are:
 
 * Junit
-* Mockito
 * Maven
+* Mockito
+
 
 === Junit
-Junit is the de-facto standard
+Junit is the de-facto standard unit test framework in the Java world. Junit allows us to write unit tests and run them. It is a very esatblished and well-known framework, and it is supported by all major IDEs and build toolchains.
 
-=== Mockito
-TBD
+[NOTE]
+====
+There are several major version of Junit with some variations between them. Though syntax can be a bit different, all version expresses the same ideas and concepts and it shouln't be to hard to adapt. The most recent major version as of today is version 5.
+====
+
+==== Concepts
+From a technical standpoint, a junit test is implemented as a method, annotated with a `@Test` annotation. This annotation will mark the method as a unit test that will be executed by the Junit test runner. A `@Test` method that executes without throwing an `Exception` is a passing unit test. In any other case it will be marked as failed.
+
+Let's write our first test methods:
+
+[source%linenums, java]
+----
+package com.testingspring.demoapp.junit;
+
+import org.junit.jupiter.api.Test;
+
+public class TestDemo {
+	
+	@Test
+	public void helloWorld() {                        // <.>
+		System.out.println("Hello World!");
+	}
+	
+	@Test
+	public void failingTest() {                       // <.>
+		throw new RuntimeException("Failing test!");
+	}
+
+}
+----
+<.> This mehod just prints a string to system output stream, hence it will pass
+<.> This method throws an `Exception`, hence it will fail
+
+==== Some Examples
+
+
+==== Running tests
+Typically you would like to run unit tests in two scenarios:
+
+1. During active code development
+2. As a part of the application build process, on your local machine or as part of some CI/CD pipeline.
+
+In the first case, the IDE in you best friend. Most chances you already use IntelliJ or Eclipse, and they both have great junit support, including visual runners. Typically, you can right click on a test method or class and run it directly from the context menu.
+
+In the second case, junit will be called by the build system you are using - Maven, Gradle, etc. All java build toolchanins provide support for running juint tests, usually via a dedicated plugin.
+
+If you never run a junit test before - I encourage you give it a try right now. Use link:https://start.spring.io/[Spring Initializr] to generate a new Spring Boot project, import it into you favorate IDE and use it as a playground (it will include all neccesary dependencies by default).
 
 === Maven
+
+==== Test code vs production code
+Junit tests are made up of plain Java code, and it should be considered a part of your application project. This means is should be managed under you verson control system (for example: git). One thing that separate test code from the actual application code is that the test code is not required to run the application, and it should not be pacakged into the final application compiled artifact (final JAR/WAR file).
+
+Maven project have a specail directory tree structure that makes is very easy to distinct bewteen application code and test code:
+
+[plantuml, format=svg, opts="inline"]
+----
+skinparam Legend {
+	BackgroundColor transparent
+	BorderColor transparent
+}
+legend
+Maven Application Directory
+|_ src
+  |_ **main**
+    |_ java/
+    |_ resources/
+  |_ **test**
+    |_ java/
+    |_ resources/
+|_ target
+end legend
+----
+
+The source code (linving under the `src` directory) is divided into two directories: `main` for the actual application code and resources and `test` for test code and resources.
+
+=== Mockito
 TBD
